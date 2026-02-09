@@ -139,7 +139,7 @@ def main(page: ft.Page):
     # Header
     header = ft.Row(
         [
-            ft.Icon(ft.icons.RADAR, size=40, color=ft.colors.BLUE),
+            ft.Icon(ft.icons.WIFI, size=40, color=ft.colors.BLUE),
             ft.Text("NetPulse Scanner", size=30, weight=ft.FontWeight.BOLD)
         ],
         alignment=ft.MainAxisAlignment.CENTER
