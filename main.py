@@ -49,7 +49,7 @@ def main(page: ft.Page):
     )
 
     # Export Button (Disabled initially)
-    export_btn = ft.ElevatedButton("Export Report", disabled=True)
+    export_btn = ft.FilledButton("Export Report", disabled=True)
 
     # State for export
     current_scan_result = None
@@ -131,7 +131,7 @@ def main(page: ft.Page):
 
         scanner.scan_network(target, args, on_scan_complete)
 
-    scan_btn = ft.ElevatedButton("Start Scan", on_click=start_scan)
+    scan_btn = ft.FilledButton("Start Scan", on_click=start_scan)
     export_btn.on_click = export_report
 
     # --- Layout ---
@@ -139,7 +139,7 @@ def main(page: ft.Page):
     # Header
     header = ft.Row(
         [
-            ft.Icon(ft.icons.WIFI, size=40, color=ft.colors.BLUE),
+            ft.Icon(name="wifi", size=40, color=ft.colors.BLUE),
             ft.Text("NetPulse Scanner", size=30, weight=ft.FontWeight.BOLD)
         ],
         alignment=ft.MainAxisAlignment.CENTER
@@ -184,4 +184,4 @@ def main(page: ft.Page):
         dlg.open = True
         page.update()
 
-ft.app(target=main)
+ft.app(main)
